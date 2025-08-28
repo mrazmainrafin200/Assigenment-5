@@ -1,4 +1,4 @@
-// Heart icon click and top nev heart count
+// Heart icon click and top nev heart count 1
 let hearts = document.getElementsByClassName('heart-icon');
 let topHeartCount = document.getElementById('top-heart-count');
 for (let i = 0; i < hearts.length; i++) {
