@@ -6,7 +6,7 @@ for (let i = 0; i < hearts.length; i++) {
         let currentCount = parseInt(topHeartCount.textContent);
         topHeartCount.textContent = currentCount + 1;
     });
-}
+};
 
 // Call buttons click, show alert and cut 20 coins 
 let coin = 100;
@@ -21,24 +21,25 @@ callButtons.forEach(buttons => {
         if (coin >= 20) {
             coin -= 20;
             coinCounts.innerText = coin;
-            alert(service + "-" + number);
-
-            Object.values(messages).forEach(msg => {
-                if (msg) {
-                    msg.classList.add("hidden");
-                    msg.classList.remove("flex");
-                }
-            });
-
-            let msgId = (index + 1).toString();
-            let msg = messages[msgId];
-            if (msg) {
-                msg.classList.remove("hidden");
-                msg.classList.add("flex");
-            }
+            alert(service +' '+ number);
         }
         else {
-            alert("Not enough coins! Please recharge.");
+            alert("You don't have enough coins. You need at least 20 coins to make a call.");
         }
     });
 });
+
+
+
+// copy btn click and number copy 
+let copyBtn = document.getElementsByClassName('copy-btn')
+let topCopyCount = document.getElementById('top-copy-btn');
+
+for (let i = 0; i < copyBtn.length; i++) {
+    copyBtn[i].addEventListener('click', function () {
+        let currentCount = parseInt(topCopyCount.textContent);
+        topCopyCount.textContent = currentCount + 1;
+        let number = this.getAttribute('data-number');
+        navigator.clipboard.writeText(number);
+    });
+};
