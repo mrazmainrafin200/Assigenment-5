@@ -21,15 +21,13 @@ callButtons.forEach(buttons => {
         if (coin >= 20) {
             coin -= 20;
             coinCounts.innerText = coin;
-            alert(service +' '+ number);
+            alert(service + ' ' + number);
         }
         else {
             alert("You don't have enough coins. You need at least 20 coins to make a call.");
         }
     });
 });
-
-
 
 // copy btn click and number copy 
 let copyBtn = document.getElementsByClassName('copy-btn')
