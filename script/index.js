@@ -8,13 +8,22 @@ for (let i = 0; i < hearts.length; i++) {
     });
 }
 
-// Call buttons click and show alert 
+// Call buttons click, show alert and cut 20 coins 
+let coin = 100;
+let coinCounts = document.getElementById('coin-count');
 let callButtons = document.querySelectorAll('.call-btn')
 callButtons.forEach(buttons => {
     buttons.addEventListener('click', function () {
         let service = this.getAttribute('data-service');
         let number = this.getAttribute('data-number');
-        alert(service + "-" + number);
-        console.log(service, Number);
+
+        if (coin >= 20) {
+            coin -= 20;
+            coinCounts.innerText = coin;
+            alert(service + "-" + number);
+        }
+        else {
+            alert("Not enough coins! Please recharge.");
+        }
     });
 });
